@@ -2,6 +2,7 @@ function key(event){
     if(event.which == 13){//enter
         if(rw == 0){
             rw = setInterval(run,100);
+            rs.play();
         }
         
 
@@ -9,8 +10,12 @@ function key(event){
     }if(event.which == 32){//space
         clearInterval(rw);
         rw = 0;
+        rs.pause();
     }
 }
+
+var rs = new Audio("run.mp3");
+rs.loop = true;
 
 var rw = 0;
 var r = 1;
